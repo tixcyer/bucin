@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spesial Valentine ☕🤎 - You & I</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#F5EBE6',
+                            200: '#EFE3D3',
+                            300: '#E6D5B8',
+                        },
+                        warmbrown: {
+                            100: '#D7C0AE',
+                            200: '#C69B7B',
+                            300: '#B08968',
+                            400: '#9C6644',
+                            500: '#7F5539',
+                            600: '#5C3D2E',
+                            700: '#4A3525',
+                            800: '#3E2723',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FDFBF7;
+            overflow-x: hidden;
+            color: #3E2723;
+        }
+        .font-cursive {
+            font-family: 'Caveat', cursive;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Glassmorphism Warm Theme */
+        .glass-card-warm {
+            background: rgba(255, 253, 249, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(198, 155, 123, 0.35);
+            box-shadow: 0 20px 40px rgba(74, 53, 37, 0.08);
+        }
+
+        .glass-card-darker {
+            background: rgba(245, 235, 230, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(176, 137, 104, 0.35);
+            box-shadow: 0 15px 35px rgba(62, 39, 35, 0.12);
+        }
+
+        /* Background Gradient Animation */
+        .bg-gradient-warm {
+            background: linear-gradient(-45deg, #FDFBF7, #F5EBE6, #EFE3D3, #E6D5B8, #F5EBE6);
+            background-size: 400% 400%;
+            animation: warmGradient 18s ease infinite;
+        }
+
+        @keyframes warmGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Polaroid Photo Effects */
+        .polaroid-frame {
+            background: #FFFFFF;
+            padding: 12px 12px 24px 12px;
+            box-shadow: 0 10px 25px rgba(74, 53, 37, 0.14);
+            border: 1px solid rgba(230, 213, 184, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .polaroid-rotate-left {
+            transform: rotate(-2.5deg);
+        }
+        .polaroid-rotate-right {
+            transform: rotate(2.5deg);
+        }
+        .polaroid-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 15px 30px rgba(74, 53, 37, 0.2);
+        }
+
+        /* Washi Tape Effect */
+        .washi-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 100px;
+            height: 26px;
+            background: rgba(230, 213, 184, 0.85);
+            border: 1px dashed rgba(176, 137, 104, 0.5);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        /* Custom Warm Envelope Styling */
+        .envelope-wrapper {
+            perspective: 1000px;
+        }
+        
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #B08968;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            box-shadow: 0 15px 30px rgba(62, 39, 35, 0.2);
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .envelope:hover {
+            transform: translateY(-5px);
+        }
+
+        .envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-top: 110px solid #7F5539;
+            transform-origin: top;
+            transition: transform 0.6s ease 0.2s, z-index 0.2s ease 0.2s;
+            z-index: 4;
+        }
+
+        .envelope .pocket {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 150px solid #C69B7B;
+            border-right: 150px solid #C69B7B;
+            border-bottom: 110px solid #9C6644;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 3;
+        }
+
+        .envelope .letter {
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            width: 270px;
+            height: 170px;
+            background: #FFFDF9;
+            border: 1px solid #EFE3D3;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.6s ease, height 0.6s ease, z-index 0.1s ease 0.3s;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope.open .letter {
+            transform: translateY(-135px);
+            height: 340px;
+            z-index: 5;
+            box-shadow: 0 10px 30px rgba(62, 39, 35, 0.2);
+        }
+
+        @keyframes warmPulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(198, 155, 123, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(198, 155, 123, 0.7); }
+        }
+        .pulse-warm {
+            animation: warmPulse 2.5s infinite;
+        }
+
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .float-anim {
+            animation: floatAnim 3.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-warm min-h-screen flex flex-col justify-between items-center relative select-none overflow-x-hidden">
+
+    <!-- Canvas Background for Warm Floating Hearts -->
+    <canvas id="heartCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Canvas Background for Confetti Burst -->
+    <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+    <!-- HTML5 Audio Fallback / Custom Audio File -->
+    <audio id="customAudioPlayer" loop class="hidden"></audio>
+
+    <!-- Header Navigation & Music Controls -->
+    <header class="w-full max-w-4xl p-4 flex flex-wrap justify-between items-center gap-2 z-20">
+        <div class="flex items-center space-x-2 bg-cream-100/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-warmbrown-200/50 shadow-sm">
+            <span class="text-warmbrown-700 text-xs font-bold flex items-center gap-1.5">
+                <span>🎵</span> You & I - One Direction
+            </span>
+        </div>
+
+        <div class="flex items-center space-x-2">
+            <!-- Custom MP3 File Upload Button -->
+            <label for="mp3Upload" class="cursor-pointer bg-cream-100/90 hover:bg-cream-200 border border-warmbrown-200/60 text-warmbrown-700 px-3 py-1.5 rounded-full backdrop-blur-md transition-all text-xs font-semibold flex items-center gap-1 shadow-sm" title="Upload File MP3 You & I Sendiri (Opsional)">
+                <span>📁 Upload MP3</span>
+            </label>
+            <input type="file" id="mp3Upload" accept="audio/mp3,audio/*" class="hidden" onchange="handleMp3Upload(event)">
+
+            <!-- Master Play / Pause Toggle -->
+            <button id="musicToggle" class="bg-cream-100/90 hover:bg-cream-200 border border-warmbrown-200/60 text-warmbrown-700 px-3.5 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 flex items-center space-x-1.5 shadow-sm hover:scale-105 active:scale-95">
+                <svg id="musicIcon" class="w-4 h-4 text-warmbrown-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <span id="musicText" class="text-xs font-bold">Lagu: Off</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="w-full max-w-4xl px-4 py-4 flex-grow flex items-center justify-center z-10">
+
+        <!-- ================= STEP 1: Name Input Screen ================= -->
+        <section id="screen1" class="w-full max-w-md glass-card-warm rounded-3xl p-8 text-center transition-all duration-500 transform float-anim">
+            <div class="w-20 h-20 bg-warmbrown-100/80 rounded-full flex items-center justify-center mx-auto mb-6 border border-warmbrown-200 shadow-inner">
+                <span class="text-4xl">💌</span>
+            </div>
+            <h1 class="text-3xl font-bold mb-2 text-warmbrown-800 font-serif-title">Ada Kejutan Untukmu</h1>
+            <p class="text-warmbrown-600 text-xs mb-6 font-medium">Tuliskan nama pasangan atau orang tersayangmu untuk membuka pengalaman spesial ☕🤎</p>
+
+            <form id="nameForm" onsubmit="handleNameSubmit(event)" class="space-y-4">
+                <div>
+                    <input type="text" id="targetName" placeholder="Tulis nama panggilan dia..." required
+                        class="w-full px-5 py-3.5 rounded-2xl bg-cream-50/90 border border-warmbrown-200 text-warmbrown-800 placeholder-warmbrown-300 focus:outline-none focus:ring-2 focus:ring-warmbrown-300 focus:bg-white transition-all duration-300 text-center font-medium shadow-inner text-base">
+                </div>
+                <div id="errorMsg" class="hidden text-rose-600 text-xs font-semibold">Tolong masukkan namanya dulu ya 😊</div>
+                <button type="submit" 
+                    class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-warmbrown-400 to-warmbrown-500 hover:from-warmbrown-500 hover:to-warmbrown-600 text-cream-50 font-semibold shadow-lg shadow-warmbrown-400/20 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-2">
+                    <span>Mulai Kejutan 💖</span>
+                </button>
+            </form>
+            <p class="text-[11px] text-warmbrown-400 mt-4 italic">🎵 Musik "You & I" akan otomatis berputar di latar belakang tanpa terputus.</p>
+        </section>
+
+        <!-- ================= STEP 2: 3 Photo Cards Zig-Zag Layout ================= -->
+        <section id="screen2" class="hidden w-full glass-card-warm rounded-3xl p-5 md:p-8 transition-all duration-500 border border-warmbrown-200/50 space-y-8">
+            <div class="text-center mb-4">
+                <span class="inline-block px-3.5 py-1 bg-warmbrown-100/80 rounded-full text-warmbrown-700 text-xs font-bold border border-warmbrown-200">
+                    Spesial Momen Untuk <span class="target-name text-warmbrown-700 font-bold">Kamu</span> ✨
+                </span>
+                <h2 class="text-2xl md:text-3xl font-bold text-warmbrown-800 mt-2 font-serif-title">
+                    3 Cerita & Momen Manis ☕
+                </h2>
+                <p class="text-xs text-warmbrown-500 mt-1">Kamu bebas mengganti setiap foto & kata-kata di bawah ini kapan saja!</p>
+            </div>
+
+            <!-- CARD 1: Foto KIRI, Teks KANAN -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-cream-100/40 p-5 rounded-3xl border border-warmbrown-200/40">
+                <!-- Left: Polaroid Photo -->
+                <div class="flex flex-col items-center">
+                    <div class="polaroid-frame polaroid-rotate-left relative w-full max-w-[230px]">
+                        <div class="washi-tape"></div>
+                        <div class="w-full h-52 rounded bg-cream-100 overflow-hidden relative group">
+                            <img id="photoDisplay1" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Romantic Memory 1" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.src='https://placehold.co/600x600/EFE3D3/5C3D2E?text=Momen+Manis+1'">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p class="font-cursive text-2xl text-warmbrown-700 font-bold leading-none">
+                                <span class="target-name">Kamu</span> & Senyumanmu ☕
+                            </p>
+                            <p class="text-[10px] text-warmbrown-400 mt-1 uppercase tracking-wider font-semibold">Momen #1</p>
+                        </div>
+                    </div>
+                    <!-- Upload Button -->
+                    <div class="mt-3">
+                        <label for="imageUpload1" class="cursor-pointer px-3 py-1.5 bg-cream-100 hover:bg-cream-200 text-warmbrown-700 text-xs font-semibold rounded-xl border border-warmbrown-200 transition-all flex items-center gap-1.5 shadow-sm">
+                            <span>📷 Upload Foto 1</span>
+                        </label>
+                        <input type="file" id="imageUpload1" accept="image/*" class="hidden" onchange="handleImageUpload(event, 1)">
+                    </div>
+                </div>
+
+                <!-- Right: Bucin & Funny Quotation Card -->
+                <div class="flex flex-col justify-between space-y-3">
+                    <div class="bg-cream-50/90 border border-warmbrown-200/60 rounded-2xl p-4 shadow-inner">
+                        <div class="text-xl mb-1">💬</div>
+                        <h3 class="text-xs font-bold text-warmbrown-600 uppercase tracking-wide">Fakta Unik #1:</h3>
+                        <p id="funnyQuoteText1" class="text-warmbrown-800 text-xs md:text-sm font-medium mt-1 leading-relaxed">
+                            "Kata tetangga, senyum <span class="target-name font-bold text-warmbrown-600">Kamu</span> itu bisa merugikan kesehatan... karena bikin ketagihan liat tiap hari! 😌🤎"
+                        </p>
+                    </div>
+                    <button onclick="shuffleFunnyQuote(1)" 
+                        class="w-full py-2 px-3 bg-cream-200/80 hover:bg-cream-300/80 text-warmbrown-700 rounded-xl text-xs font-semibold border border-warmbrown-300 transition-all flex items-center justify-center gap-1.5">
+                        <span>🎲 Acak Kata-Kata Card 1</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 2: Teks KIRI, Foto KANAN -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-cream-100/40 p-5 rounded-3xl border border-warmbrown-200/40">
+                <!-- Left: Bucin & Funny Quotation Card -->
+                <div class="order-2 md:order-1 flex flex-col justify-between space-y-3">
+                    <div class="bg-cream-50/90 border border-warmbrown-200/60 rounded-2xl p-4 shadow-inner">
+                        <div class="text-xl mb-1">🎶</div>
+                        <h3 class="text-xs font-bold text-warmbrown-600 uppercase tracking-wide">Lagu & Fakta #2:</h3>
+                        <p id="funnyQuoteText2" class="text-warmbrown-800 text-xs md:text-sm font-medium mt-1 leading-relaxed">
+                            "Persis seperti lirik <i>You & I</i> One Direction: tidak ada yang bisa memisahkan kita berdua, apalagi cuma urusan memilih menu makan siang! ☕✨"
+                        </p>
+                    </div>
+                    <button onclick="shuffleFunnyQuote(2)" 
+                        class="w-full py-2 px-3 bg-cream-200/80 hover:bg-cream-300/80 text-warmbrown-700 rounded-xl text-xs font-semibold border border-warmbrown-300 transition-all flex items-center justify-center gap-1.5">
+                        <span>🎲 Acak Kata-Kata Card 2</span>
+                    </button>
+                </div>
+
+                <!-- Right: Polaroid Photo -->
+                <div class="order-1 md:order-2 flex flex-col items-center">
+                    <div class="polaroid-frame polaroid-rotate-right relative w-full max-w-[230px]">
+                        <div class="washi-tape"></div>
+                        <div class="w-full h-52 rounded bg-cream-100 overflow-hidden relative group">
+                            <img id="photoDisplay2" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Romantic Memory 2" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.src='https://placehold.co/600x600/EFE3D3/5C3D2E?text=Momen+Manis+2'">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p class="font-cursive text-2xl text-warmbrown-700 font-bold leading-none">
+                                Hari-Hari Bersama <span class="target-name">Kamu</span> ✨
+                            </p>
+                            <p class="text-[10px] text-warmbrown-400 mt-1 uppercase tracking-wider font-semibold">Momen #2</p>
+                        </div>
+                    </div>
+                    <!-- Upload Button -->
+                    <div class="mt-3">
+                        <label for="imageUpload2" class="cursor-pointer px-3 py-1.5 bg-cream-100 hover:bg-cream-200 text-warmbrown-700 text-xs font-semibold rounded-xl border border-warmbrown-200 transition-all flex items-center gap-1.5 shadow-sm">
+                            <span>📷 Upload Foto 2</span>
+                        </label>
+                        <input type="file" id="imageUpload2" accept="image/*" class="hidden" onchange="handleImageUpload(event, 2)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: Foto KIRI, Teks KANAN -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-cream-100/40 p-5 rounded-3xl border border-warmbrown-200/40">
+                <!-- Left: Polaroid Photo -->
+                <div class="flex flex-col items-center">
+                    <div class="polaroid-frame polaroid-rotate-left relative w-full max-w-[230px]">
+                        <div class="washi-tape"></div>
+                        <div class="w-full h-52 rounded bg-cream-100 overflow-hidden relative group">
+                            <img id="photoDisplay3" src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Romantic Memory 3" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                 onerror="this.src='https://placehold.co/600x600/EFE3D3/5C3D2E?text=Momen+Manis+3'">
+                        </div>
+                        <div class="mt-3 text-center">
+                            <p class="font-cursive text-2xl text-warmbrown-700 font-bold leading-none">
+                                Favoritku Selamanya 🤎
+                            </p>
+                            <p class="text-[10px] text-warmbrown-400 mt-1 uppercase tracking-wider font-semibold">Momen #3</p>
+                        </div>
+                    </div>
+                    <!-- Upload Button -->
+                    <div class="mt-3">
+                        <label for="imageUpload3" class="cursor-pointer px-3 py-1.5 bg-cream-100 hover:bg-cream-200 text-warmbrown-700 text-xs font-semibold rounded-xl border border-warmbrown-200 transition-all flex items-center gap-1.5 shadow-sm">
+                            <span>📷 Upload Foto 3</span>
+                        </label>
+                        <input type="file" id="imageUpload3" accept="image/*" class="hidden" onchange="handleImageUpload(event, 3)">
+                    </div>
+                </div>
+
+                <!-- Right: Bucin & Funny Quotation Card -->
+                <div class="flex flex-col justify-between space-y-3">
+                    <div class="bg-cream-50/90 border border-warmbrown-200/60 rounded-2xl p-4 shadow-inner">
+                        <div class="text-xl mb-1">☕</div>
+                        <h3 class="text-xs font-bold text-warmbrown-600 uppercase tracking-wide">Fakta Unik #3:</h3>
+                        <p id="funnyQuoteText3" class="text-warmbrown-800 text-xs md:text-sm font-medium mt-1 leading-relaxed">
+                            "Kopi susu aren rasa paling enak pun kalah manis dibanding cara <span class="target-name font-bold text-warmbrown-600">Kamu</span> ngomong ke aku! 🍯"
+                        </p>
+                    </div>
+                    <button onclick="shuffleFunnyQuote(3)" 
+                        class="w-full py-2 px-3 bg-cream-200/80 hover:bg-cream-300/80 text-warmbrown-700 rounded-xl text-xs font-semibold border border-warmbrown-300 transition-all flex items-center justify-center gap-1.5">
+                        <span>🎲 Acak Kata-Kata Card 3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Button to Step 3 -->
+            <div class="pt-4 border-t border-warmbrown-200/40 text-center">
+                <button onclick="goToStep3()" 
+                    class="w-full md:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-warmbrown-400 to-warmbrown-500 hover:from-warmbrown-500 hover:to-warmbrown-600 text-cream-50 font-semibold shadow-lg shadow-warmbrown-400/20 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 inline-flex items-center justify-center space-x-2">
+                    <span>Lanjut ke Pertanyaan Utama 💌</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= STEP 3: Proposal & Evasive Button ================= -->
+        <section id="screen3" class="hidden w-full max-w-lg glass-card-warm rounded-3xl p-8 text-center transition-all duration-500 relative min-h-[440px] flex flex-col justify-between border border-warmbrown-200/50">
+            <div>
+                <div class="inline-block px-4 py-1.5 bg-warmbrown-100 rounded-full text-warmbrown-700 text-xs font-bold mb-4 border border-warmbrown-200">
+                    Pertanyaan Utama ☕
+                </div>
+                <h2 id="greetingTitle" class="text-3xl md:text-4xl font-bold text-warmbrown-800 mb-2 font-serif-title leading-tight">
+                    Hai <span class="target-name text-warmbrown-600">Kamu</span>,
+                </h2>
+                <h3 class="text-xl md:text-2xl font-bold text-warmbrown-700 mb-4 tracking-wide">
+                    Will You Be My Valentine? ☕🤎
+                </h3>
+
+                <!-- Bear / Music Note Visual -->
+                <div class="my-5 relative flex justify-center items-center">
+                    <div class="w-24 h-24 bg-gradient-to-tr from-warmbrown-300 to-warmbrown-200 rounded-full flex items-center justify-center text-4xl shadow-lg pulse-warm transform hover:rotate-6 transition-transform">
+                        🧸
+                    </div>
+                    <span class="absolute -top-1 -right-2 text-xl animate-bounce">🎵</span>
+                    <span class="absolute -bottom-1 -left-2 text-xl animate-pulse">✨</span>
+                </div>
+                <p class="text-warmbrown-600 text-xs md:text-sm mb-6 leading-relaxed">
+                    Hari Valentine ini bakalan makin hangat dan sempurna sambil dengerin lagu favorit kita. Mau kan? 😊
+                </p>
+            </div>
+
+            <!-- Action Buttons Area with Evasive Mechanics -->
+            <div id="buttonArea" class="relative w-full min-h-[90px] flex items-center justify-center gap-4">
+                <button id="yesBtn" onclick="handleYesClick()"
+                    class="py-3 px-8 rounded-2xl bg-gradient-to-r from-warmbrown-500 to-warmbrown-600 hover:from-warmbrown-600 hover:to-warmbrown-700 text-cream-50 font-bold text-sm md:text-base shadow-lg shadow-warmbrown-500/25 transition-all duration-300 transform hover:scale-110 active:scale-95 z-10 flex items-center space-x-2">
+                    <span>Mau Banget! 🥰</span>
+                </button>
+                
+                <button id="noBtn"
+                    class="py-3 px-8 rounded-2xl bg-cream-200 hover:bg-cream-300 text-warmbrown-700 font-semibold text-sm md:text-base shadow-md border border-warmbrown-300 transition-all duration-200 z-10">
+                    <span>Gak / Tidak 😜</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= STEP 4: Celebration & Final Bucin Reveal ================= -->
+        <section id="screen4" class="hidden w-full max-w-lg space-y-6 transition-all duration-500">
+            <!-- Glass Header Box -->
+            <div class="glass-card-warm rounded-3xl p-6 text-center border border-warmbrown-200/60 shadow-xl">
+                <div class="text-4xl mb-2">🎉☕🤎</div>
+                <h2 class="text-3xl font-bold text-warmbrown-800 font-serif-title">
+                    Yay! Terima Kasih, <span class="target-name text-warmbrown-600">Sayang</span>!
+                </h2>
+                <p class="text-warmbrown-600 text-xs mt-1">Hari Valentine ini terasa jauh lebih istimewa bersama lagu <b>You & I</b> 🎵</p>
+            </div>
+
+            <!-- Envelope Section -->
+            <div class="flex flex-col items-center justify-center py-2">
+                <p class="text-warmbrown-600 text-xs mb-3 font-medium animate-pulse">👇 Klik amplop coklat di bawah untuk membaca surat cinta 👇</p>
+                <div class="envelope-wrapper">
+                    <div id="loveEnvelope" class="envelope" onclick="toggleEnvelope()">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter text-warmbrown-800 text-left flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-warmbrown-700 text-sm mb-1">Untuk <span class="target-name">Kamu</span> 🤎</h4>
+                                <p id="letterContent" class="text-xs text-warmbrown-600 leading-relaxed font-sans">
+                                    <i>"Not even the gods above can sever the two of us... You and I."</i><br><br>
+                                    Terima kasih sudah selalu jadi alasan senyumku setiap hari. Di Hari Valentine ini, aku cuma mau bilang kalau hadirmu bikin hariku jauh lebih tenang, bermakna, dan menyenangkan. ☕✨
+                                </p>
+                            </div>
+                            <div class="text-right border-t border-warmbrown-100 pt-1 mt-2">
+                                <span class="font-cursive text-warmbrown-600 text-base font-bold">You & I Forever ☕</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliment Generator Section -->
+            <div class="glass-card-warm rounded-3xl p-6 text-center border border-warmbrown-200/60 space-y-4">
+                <h3 class="text-sm font-bold text-warmbrown-700 uppercase tracking-wider flex items-center justify-center space-x-2">
+                    <span>✨ Alasan Kenapa Kamu Spesial ✨</span>
+                </h3>
+                
+                <div id="complimentBox" class="min-h-[75px] bg-cream-100/70 rounded-2xl p-4 flex items-center justify-center border border-warmbrown-200/50 transition-all duration-300">
+                    <p id="complimentText" class="text-warmbrown-700 text-xs md:text-sm font-medium italic leading-relaxed">
+                        "Klik tombol di bawah ini untuk membaca hal-hal manis tentangmu..."
+                    </p>
+                </div>
+
+                <button onclick="generateCompliment()" 
+                    class="w-full py-3 px-6 rounded-2xl bg-gradient-to-r from-warmbrown-400 to-warmbrown-500 hover:from-warmbrown-500 hover:to-warmbrown-600 text-cream-50 font-semibold text-xs md:text-sm shadow-md transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-2">
+                    <span>🎲 Acak Alasan Spesial</span>
+                </button>
+            </div>
+
+            <!-- Romantic Quote Box -->
+            <div class="glass-card-darker rounded-3xl p-6 text-center text-warmbrown-800 shadow-xl space-y-2">
+                <div class="text-warmbrown-600 text-lg font-bold font-serif-title">Janji Hari Valentine ☕</div>
+                <p class="text-xs text-warmbrown-600 italic leading-relaxed">
+                    "Seperti bait lagu favorit kita: tidak ada waktu dan jarak yang bisa mengubah betapa istimewanya kamu buat aku."
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full p-4 text-center text-warmbrown-500 text-xs z-10 font-medium">
+        Dibuat dengan 🤎 khusus Hari Valentine • You & I - One Direction
+    </footer>
+
+    <!-- JavaScript Engine -->
+    <script>
+        // State Variables
+        let partnerName = "";
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let musicInterval = null;
+        let currentNoteIndex = 0;
+        let isCustomAudioLoaded = false;
+
+        // Custom Audio Player Reference
+        const customAudioPlayer = document.getElementById('customAudioPlayer');
+
+        // Evasive Button Texts
+        const evasiveTexts = [
+            "Eits, gak bisa! 😜",
+            "Tombol ini macet deh 🙈",
+            "Harus pilih Mau! ☕",
+            "Lari terusss~ 🏃‍♂️",
+            "Masih berusaha? 😝",
+            "Tetap gak bisa diklik 🤪",
+            "Pasrah aja yuk 🥰",
+            "Pilih 'Mau Banget' aja 🤎"
+        ];
+        let evasiveIndex = 0;
+
+        // Quotes Pool for 3 Photo Cards
+        const cardQuotesPool = [
+            [
+                "Kata tetangga, senyum [Nama] itu bisa merugikan kesehatan... karena bikin ketagihan liat tiap hari! 😌🤎",
+                "Kalau senyuman [Nama] dijadiin resep dokter, dipastikan angka stres dunia langsung turun 99%! ✨",
+                "Senyum [Nama] itu mirip kopi hangat di pagi hari: selalu sukses bikin hari-hari terasa tenang. ☕"
+            ],
+            [
+                "Persis seperti lirik You & I One Direction: tidak ada yang bisa memisahkan kita berdua, [Nama]! ☕✨",
+                "Dokter bilang aku kekurangan vitamin... Vitamin [Nama] maksudnya! 🙈✨",
+                "Kalau menyukai [Nama] itu adalah pekerjaan, aku pasti sudah jadi karyawan teladan paling rajin lembur! 😂🤎"
+            ],
+            [
+                "Kopi susu aren rasa paling enak pun kalah manis dibanding cara [Nama] ngomong ke aku! 🍯",
+                "Ada banyak alasan untuk bahagia, tapi melihat [Nama] bahagia selalu jadi alasan favoritku. 🤎",
+                "Dunia ini emang berisik, tapi pas ngobrol sama [Nama], semuanya berasa hangat dan tenang. 🎧☕"
+            ]
+        ];
+
+        let quoteIndices = [0, 0, 0];
+
+        // Sweet Warm Compliments
+        const compliments = [
+            "Senyumanmu selalu berhasil meredakan rasa lelah di hari-hariku. 😊",
+            "Cara kamu memperhatikan hal-hal kecil membuatku merasa sangat dihargai. ☕",
+            "Kamu adalah tempat ternyaman untuk berbagi cerita tentang apa saja. 📖",
+            "Setiap kali mendengar suaramu, hatiku selalu merasa hangat dan tenang. 🎶",
+            "Kebaikan hatimu adalah alasan utama kenapa aku begitu mengagumimu. ✨",
+            "Bersamamu, hal-hal sederhana terasa jauh lebih istimewa. 🌷",
+            "Kamu tidak hanya membuat hariku lebih cerah, tapi juga membuat hatiku lebih hangat. ☀️",
+            "Terima kasih sudah selalu menjadi versi terbaik dari dirimu untukku. 🤎",
+            "Humormu dan tawamu adalah hal favoritku di dunia ini. 🥰",
+            "Kehadiranmu adalah salah satu hadiah terindah yang pernah kupunya. 🎁"
+        ];
+
+        // Step 1: Handle Name Submit
+        function handleNameSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('targetName').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (!input) {
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+            errorMsg.classList.add('hidden');
+
+            partnerName = input;
+            
+            // Update name placeholders
+            document.querySelectorAll('.target-name').forEach(el => {
+                el.innerText = partnerName;
+            });
+
+            // Update quotes
+            updateAllCardQuotes();
+
+            // Transition to Step 2
+            fadeTransition('screen1', 'screen2');
+
+            // Start "You & I" Music Continuously
+            startMusic();
+        }
+
+        // Custom MP3 File Upload Handler
+        function handleMp3Upload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                customAudioPlayer.src = fileURL;
+                isCustomAudioLoaded = true;
+
+                // Stop synth loop if running
+                if (musicInterval) {
+                    clearInterval(musicInterval);
+                    musicInterval = null;
+                }
+
+                // Play custom MP3 seamlessly
+                customAudioPlayer.play().then(() => {
+                    isMusicPlaying = true;
+                    updateMusicUI(true);
+                }).catch(err => {
+                    console.log("Audio play error:", err);
+                });
+            }
+        }
+
+        // Photo Upload Handler for Cards 1, 2, 3
+        function handleImageUpload(event, cardNum) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(`photoDisplay${cardNum}`).src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Card Quotes Updates
+        function updateCardQuoteText(cardNum) {
+            const quoteElem = document.getElementById(`funnyQuoteText${cardNum}`);
+            const pool = cardQuotesPool[cardNum - 1];
+            const idx = quoteIndices[cardNum - 1];
+            let rawText = pool[idx];
+            let formattedText = rawText.replace(/\[Nama\]/g, `<span class="target-name font-bold text-warmbrown-600">${partnerName}</span>`);
+            quoteElem.innerHTML = `"${formattedText}"`;
+        }
+
+        function updateAllCardQuotes() {
+            updateCardQuoteText(1);
+            updateCardQuoteText(2);
+            updateCardQuoteText(3);
+        }
+
+        function shuffleFunnyQuote(cardNum) {
+            const pool = cardQuotesPool[cardNum - 1];
+            quoteIndices[cardNum - 1] = (quoteIndices[cardNum - 1] + 1) % pool.length;
+            
+            const quoteElem = document.getElementById(`funnyQuoteText${cardNum}`);
+            quoteElem.style.opacity = '0';
+            setTimeout(() => {
+                updateCardQuoteText(cardNum);
+                quoteElem.style.opacity = '1';
+            }, 200);
+        }
+
+        // Step 2 -> Step 3
+        function goToStep3() {
+            fadeTransition('screen2', 'screen3');
+        }
+
+        // Screen Transition Utility
+        function fadeTransition(fromId, toId) {
+            const fromElem = document.getElementById(fromId);
+            const toElem = document.getElementById(toId);
+
+            fromElem.style.opacity = '0';
+            fromElem.style.transform = 'scale(0.96)';
+
+            setTimeout(() => {
+                fromElem.classList.add('hidden');
+                toElem.classList.remove('hidden');
+                toElem.style.opacity = '0';
+                toElem.style.transform = 'scale(0.96)';
+                
+                setTimeout(() => {
+                    toElem.style.opacity = '1';
+                    toElem.style.transform = 'scale(1)';
+                }, 50);
+            }, 300);
+        }
+
+        // Step 3: Evasive Button Mechanics
+        const noBtn = document.getElementById('noBtn');
+        const buttonArea = document.getElementById('buttonArea');
+
+        function moveNoButton() {
+            const areaRect = buttonArea.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+
+            const maxX = areaRect.width - btnRect.width;
+            const maxY = areaRect.height - btnRect.height;
+
+            const randomX = Math.max(10, Math.floor(Math.random() * (maxX > 0 ? maxX : 140)));
+            const randomY = Math.max(-90, Math.floor(Math.random() * 140) - 70);
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+
+            noBtn.innerHTML = `<span>${evasiveTexts[evasiveIndex]}</span>`;
+            evasiveIndex = (evasiveIndex + 1) % evasiveTexts.length;
+        }
+
+        noBtn.addEventListener('mouseover', moveNoButton);
+        noBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            moveNoButton();
+        });
+        noBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Step 3 -> Step 4
+        function handleYesClick() {
+            fadeTransition('screen3', 'screen4');
+            triggerConfetti();
+            triggerHeartExplosion();
+        }
+
+        // Step 4: Toggle Envelope
+        function toggleEnvelope() {
+            const envelope = document.getElementById('loveEnvelope');
+            envelope.classList.toggle('open');
+        }
+
+        // Step 4: Compliment Generator
+        function generateCompliment() {
+            const complimentText = document.getElementById('complimentText');
+            const complimentBox = document.getElementById('complimentBox');
+
+            complimentBox.style.opacity = '0';
+            complimentBox.style.transform = 'translateY(4px)';
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * compliments.length);
+                complimentText.innerText = `"${compliments[randomIndex]}"`;
+                complimentBox.style.opacity = '1';
+                complimentBox.style.transform = 'translateY(0)';
+            }, 200);
+        }
+
+        // Web Audio API Synthesizer - Melodi Acoustic "You & I" (One Direction)
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        // Frequencies for "You & I" Melody Sequence (C - G - Am - F / D - A - Bm - G motif)
+        const youAndINotes = [
+            329.63, // E4 - "Not"
+            392.00, // G4 - "e-"
+            440.00, // A4 - "ven"
+            392.00, // G4 - "the"
+            329.63, // E4 - "gods"
+            293.66, // D4 - "a-"
+            261.63, // C4 - "bove"
+            329.63, // E4 - "Can"
+            392.00, // G4 - "se-"
+            440.00, // A4 - "ver"
+            392.00, // G4 - "the"
+            329.63, // E4 - "two"
+            261.63, // C4 - "of us"
+            523.25, // C5 - "You"
+            440.00, // A4 - "and"
+            392.00, // G4 - "I..."
+            329.63, // E4
+            261.63  // C4
+        ];
+
+        function playYouAndINote(freq) {
+            if (!audioCtx || !isMusicPlaying || isCustomAudioLoaded) return;
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            // Warm acoustic guitar-like synth wave blend
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.12, audioCtx.currentTime + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.2);
+        }
+
+        function updateMusicUI(playing) {
+            const musicText = document.getElementById('musicText');
+            const musicIcon = document.getElementById('musicIcon');
+
+            if (playing) {
+                musicText.innerText = "Lagu: On 🎵";
+                musicIcon.classList.add('animate-spin');
+            } else {
+                musicText.innerText = "Lagu: Off";
+                musicIcon.classList.remove('animate-spin');
+            }
+        }
+
+        function startMusic() {
+            if (isCustomAudioLoaded) {
+                customAudioPlayer.play();
+                isMusicPlaying = true;
+                updateMusicUI(true);
+                return;
+            }
+
+            initAudio();
+            isMusicPlaying = true;
+            updateMusicUI(true);
+
+            if (!musicInterval) {
+                musicInterval = setInterval(() => {
+                    playYouAndINote(youAndINotes[currentNoteIndex]);
+                    currentNoteIndex = (currentNoteIndex + 1) % youAndINotes.length;
+                }, 450);
+            }
+        }
+
+        function toggleMusic() {
+            if (isCustomAudioLoaded) {
+                if (customAudioPlayer.paused) {
+                    customAudioPlayer.play();
+                    isMusicPlaying = true;
+                    updateMusicUI(true);
+                } else {
+                    customAudioPlayer.pause();
+                    isMusicPlaying = false;
+                    updateMusicUI(false);
+                }
+                return;
+            }
+
+            if (isMusicPlaying) {
+                isMusicPlaying = false;
+                updateMusicUI(false);
+                if (musicInterval) {
+                    clearInterval(musicInterval);
+                    musicInterval = null;
+                }
+            } else {
+                startMusic();
+            }
+        }
+
+        document.getElementById('musicToggle').addEventListener('click', () => toggleMusic());
+
+        // Background Warm Floating Heart Canvas
+        const heartCanvas = document.getElementById('heartCanvas');
+        const hCtx = heartCanvas.getContext('2d');
+        let hearts = [];
+
+        function resizeHeartCanvas() {
+            heartCanvas.width = window.innerWidth;
+            heartCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeHeartCanvas);
+        resizeHeartCanvas();
+
+        const heartColors = ['#C69B7B', '#B08968', '#9C6644', '#7F5539', '#D7C0AE'];
+
+        class FloatingHeart {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * heartCanvas.width;
+                this.y = heartCanvas.height + 20;
+                this.size = Math.random() * 14 + 8;
+                this.speed = Math.random() * 1.2 + 0.4;
+                this.opacity = Math.random() * 0.4 + 0.2;
+                this.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+                this.swing = Math.random() * 0.04;
+                this.swingAngle = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.y -= this.speed;
+                this.swingAngle += this.swing;
+                this.x += Math.sin(this.swingAngle) * 0.4;
+                if (this.y < -20) {
+                    this.reset();
+                }
+            }
+            draw() {
+                hCtx.save();
+                hCtx.globalAlpha = this.opacity;
+                hCtx.fillStyle = this.color;
+                hCtx.font = `${this.size}px sans-serif`;
+                hCtx.fillText('🤎', this.x, this.y);
+                hCtx.restore();
+            }
+        }
+
+        for (let i = 0; i < 22; i++) {
+            hearts.push(new FloatingHeart());
+        }
+
+        function animateHearts() {
+            hCtx.clearRect(0, 0, heartCanvas.width, heartCanvas.height);
+            hearts.forEach(h => {
+                h.update();
+                h.draw();
+            });
+            requestAnimationFrame(animateHearts);
+        }
+        animateHearts();
+
+        // Confetti Canvas Animation for Step 4
+        const confettiCanvas = document.getElementById('confettiCanvas');
+        const cCtx = confettiCanvas.getContext('2d');
+        let confettiParticles = [];
+
+        function resizeConfettiCanvas() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeConfettiCanvas);
+        resizeConfettiCanvas();
+
+        class ConfettiParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 10 + 6;
+                this.color = ['#C69B7B', '#B08968', '#7F5539', '#5C3D2E', '#E6D5B8', '#FFFDF9'][Math.floor(Math.random() * 6)];
+                this.vx = (Math.random() - 0.5) * 11;
+                this.vy = (Math.random() - 1) * 13 - 3;
+                this.gravity = 0.28;
+                this.opacity = 1;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = (Math.random() - 0.5) * 8;
+                this.isHeart = Math.random() > 0.45;
+            }
+            update() {
+                this.vx *= 0.98;
+                this.vy += this.gravity;
+                this.x += this.vx;
+                this.y += this.vy;
+                this.rotation += this.rotationSpeed;
+                this.opacity -= 0.007;
+            }
+            draw() {
+                cCtx.save();
+                cCtx.globalAlpha = Math.max(0, this.opacity);
+                cCtx.translate(this.x, this.y);
+                cCtx.rotate((this.rotation * Math.PI) / 180);
+
+                if (this.isHeart) {
+                    cCtx.fillStyle = this.color;
+                    cCtx.font = `${this.size * 1.4}px sans-serif`;
+                    cCtx.fillText('🤎', -this.size / 2, this.size / 2);
+                } else {
+                    cCtx.fillStyle = this.color;
+                    cCtx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                }
+                cCtx.restore();
+            }
+        }
+
+        function triggerConfetti() {
+            confettiParticles = [];
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 3;
+
+            for (let i = 0; i < 110; i++) {
+                confettiParticles.push(new ConfettiParticle(centerX, centerY));
+            }
+            animateConfetti();
+        }
+
+        function triggerHeartExplosion() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight * 0.6;
+                    confettiParticles.push(new ConfettiParticle(x, y));
+                }, i * 35);
+            }
+        }
+
+        function animateConfetti() {
+            cCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            confettiParticles.forEach((p, index) => {
+                p.update();
+                p.draw();
+                if (p.opacity <= 0) {
+                    confettiParticles.splice(index, 1);
+                }
+            });
+
+            if (confettiParticles.length > 0) {
+                requestAnimationFrame(animateConfetti);
+            }
+        }
+    </script>
+</body>
+</html
